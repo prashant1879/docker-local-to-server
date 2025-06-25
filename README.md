@@ -147,3 +147,59 @@ Then run:
 docker-compose pull
 docker-compose up -d
 ```
+
+## 🔍 Check Logs for a Docker Container
+
+### ✅ 1. **Basic Logs Command**
+
+```bash
+docker logs streamlit-app
+```
+
+> Replace `streamlit-app` with your container name if different.
+
+---
+
+### 🔁 2. **Follow Logs in Real-Time (Like `tail -f`)**
+
+```bash
+docker logs -f streamlit-app
+```
+
+> Press `Ctrl+C` to stop following the logs.
+
+---
+
+### ⏱ 3. **Show Recent Logs Only**
+
+```bash
+docker logs --tail 100 streamlit-app
+```
+
+> This shows only the **last 100 lines** of logs.
+
+---
+
+### 🕒 4. **Filter Logs by Timestamp**
+
+```bash
+docker logs --since 1h streamlit-app
+```
+
+> Shows logs from the **last hour**. You can use `10m`, `2h`, `1d`, etc.
+
+---
+
+### 🐳 5. **If Using Docker Compose**
+
+```bash
+docker-compose logs streamlit
+```
+
+Or follow in real time:
+
+```bash
+docker-compose logs -f streamlit
+```
+
+
